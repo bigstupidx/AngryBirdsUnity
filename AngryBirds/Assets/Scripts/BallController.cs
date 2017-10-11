@@ -76,4 +76,8 @@ public class BallController : MonoBehaviour {
         line2.GetComponent<LineController>().UpdateLine();
     }
 
+    public bool getPressed()
+    {
+        return isPressed;
+    }
 }
