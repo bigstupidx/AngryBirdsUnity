@@ -9,9 +9,15 @@ public class BallController : MonoBehaviour {
     public Rigidbody2D hook;
     public float releaseTime = 0.15f;
     public float maxDragDistance = 2.0f;
+    //public LineRenderer line;
+
+    public GameObject line1;
+    public GameObject line2;
 
     void Start()
     {
+        line1.SetActive(true);
+        line2.SetActive(true);
         GetComponent<TrailRenderer>().enabled = false;
     }
 
@@ -27,8 +33,9 @@ public class BallController : MonoBehaviour {
             else
             {
                 myRB.position = mousePos;
-            }
+            }          
         }
+        UpdateLine();
     }
 
 	public void OnMouseDown()
@@ -51,6 +58,8 @@ public class BallController : MonoBehaviour {
         float forceX = hook.position.x - releasePos.x;
         float forceY = hook.position.y - releasePos.y;
 
+        line1.SetActive(false);
+        line2.SetActive(false);
         yield return new WaitForSeconds(releaseTime);
 
         myRB.AddForce(new Vector2(forceX, forceY), ForceMode2D.Impulse);
@@ -58,5 +67,13 @@ public class BallController : MonoBehaviour {
         GetComponent<SpringJoint2D>().enabled = false;
         
         this.enabled = false;
+        
     }
+
+    void UpdateLine()
+    {
+        line1.GetComponent<LineController>().UpdateLine();
+        line2.GetComponent<LineController>().UpdateLine();
+    }
+
 }
