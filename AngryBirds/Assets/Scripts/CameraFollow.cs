@@ -10,6 +10,9 @@ public class CameraFollow : MonoBehaviour {
     float lowY;
     float leftX;
 
+    public float highY;
+    public float rightX;
+
     // Use this for initialization
     void Start()
     {
@@ -31,7 +34,11 @@ public class CameraFollow : MonoBehaviour {
         }
         if (transform.position.y < lowY)
             transform.position = new Vector3(transform.position.x, lowY, transform.position.z);
+        if (transform.position.y > highY)
+            transform.position = new Vector3(transform.position.x, highY, transform.position.z);
         if (transform.position.x < leftX)
             transform.position = new Vector3(leftX, transform.position.y, transform.position.z);
+        if (transform.position.x > rightX)
+            transform.position = new Vector3(rightX, transform.position.y, transform.position.z);
     }
 }
