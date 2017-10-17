@@ -4608,7 +4608,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1898718225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 35, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4627,6 +4627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 699629712}
   smoothing: 10
+  moveSpeed: 4.5
   highY: 4
   rightX: 28
 --- !u!1 &1942675321
