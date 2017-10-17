@@ -33,9 +33,10 @@ public class BallController : MonoBehaviour {
             else
             {
                 myRB.position = mousePos;
-            }          
+            }
+            UpdateLine();
         }
-        UpdateLine();
+        
     }
 
 	public void OnMouseDown()
@@ -62,7 +63,14 @@ public class BallController : MonoBehaviour {
         line2.SetActive(false);
         yield return new WaitForSeconds(releaseTime);
 
+        //GetComponent<SpringJoint2D>().enabled = false;
+        GetComponent<CircleCollider2D>().enabled = false;
+        GetComponent<PolygonCollider2D>().enabled = true;
+
+
         myRB.AddForce(new Vector2(forceX, forceY), ForceMode2D.Impulse);
+        myRB.AddTorque(15.0f);
+
         GetComponent<TrailRenderer>().enabled = true;
         GetComponent<SpringJoint2D>().enabled = false;
         
@@ -79,5 +87,10 @@ public class BallController : MonoBehaviour {
     public bool getPressed()
     {
         return isPressed;
+    }
+
+    void OnCollisionEnter2D(Collision2D otherColl)
+    {
+        myRB.freezeRotation = false;
     }
 }
