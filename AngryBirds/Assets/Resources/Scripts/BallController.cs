@@ -5,21 +5,26 @@ using UnityEngine;
 public class BallController : MonoBehaviour {
 
     private bool isPressed;
-    public bool isFlying;
+    private bool isFlying;
     private bool isReleased;
     private bool isAdjusted;
+    private bool isDead;
+    private bool movedSet;
+
+    private float endAttackTime;
     private float flyTime;
     private GameObject camera;
 
     public Rigidbody2D myRB;
     public Animator myAnim;
-    public Rigidbody2D hook;
+    
     public float releaseTime = 0.15f;
     public float maxDragDistance = 2.0f;
     //public LineRenderer line;
 
-    public GameObject line1;
-    public GameObject line2;
+    private Rigidbody2D hook;
+    private GameObject line1;
+    private GameObject line2;
 
     void Start()
     {
@@ -27,6 +32,17 @@ public class BallController : MonoBehaviour {
         isFlying = false;
         isReleased = false;
         isAdjusted = false;
+        isDead = false;
+        movedSet = false;
+
+        hook = GameObject.Find("Hook").GetComponent<Rigidbody2D>();
+        GetComponent<SpringJoint2D>().connectedBody = hook;
+
+        line1 = GameObject.Find("Line1");
+        line2 = GameObject.Find("Line2");
+
+        line1.GetComponent<LineController>().setPos(transform.GetChild(0));
+        line2.GetComponent<LineController>().setPos(transform.GetChild(0));
 
         line1.SetActive(true);
         line2.SetActive(true);
@@ -116,10 +132,10 @@ public class BallController : MonoBehaviour {
             UpdateLine();
         }
 
-        if (isFlying && camera.GetComponent<Camera>().orthographicSize <= 7.0f)
+        if (isFlying && camera.GetComponent<Camera>().orthographicSize <= 6.75f)
         {
-            Debug.Log(camera.GetComponent<Camera>().orthographicSize);
-            camera.GetComponent<Camera>().orthographicSize += 0.018f;       
+            //Debug.Log(camera.GetComponent<Camera>().orthographicSize);
+            camera.GetComponent<Camera>().orthographicSize += 0.02f;       
         }
 
         if(isFlying)
@@ -143,6 +159,12 @@ public class BallController : MonoBehaviour {
 
             //this.enabled = false;
             isAdjusted = true;
+        }
+
+        if(isDead && !movedSet && Time.time >= endAttackTime)
+        {
+            camera.GetComponent<CameraFollow>().setMove();
+            movedSet = true;
         }
     
     }
@@ -225,7 +247,11 @@ public class BallController : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D otherColl)
     {
         myRB.freezeRotation = false;
+        isDead = true;
+        isFlying = false;
         myAnim.SetBool("isDead", true);
+
+        endAttackTime = Time.time + 3.0f;
     }
 
 

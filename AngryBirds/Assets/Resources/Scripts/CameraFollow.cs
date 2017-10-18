@@ -7,7 +7,10 @@ public class CameraFollow : MonoBehaviour {
     public Transform target;
     public float smoothing;
     public float moveSpeed;
-    Vector3 offset;
+    private Vector3 offset;
+    private Vector3 defaultPos;
+    private bool move;
+
     float lowY;
     float leftX;
 
@@ -20,16 +23,23 @@ public class CameraFollow : MonoBehaviour {
     void Start()
     {
         isStarted = false;
+        move = false;
+        defaultPos = new Vector3(0.0f, 0.0f, transform.position.z);
 
-        
+
+        offset = transform.position - target.position;
+        lowY = transform.position.y;
+        leftX = transform.position.x;
         
     }
+
+ 
 
     // Update is called once per frame
     void FixedUpdate()
     {
 
-        if(!isStarted)
+        /*if(!isStarted)
         {
             transform.position -= Vector3.right * moveSpeed * Time.deltaTime;
             if(transform.position.x <= 0.0f)
@@ -40,18 +50,49 @@ public class CameraFollow : MonoBehaviour {
                 leftX = transform.position.x;
                 isStarted = true;
             }
-        }
+        }*/
 
-        if (isStarted)
+        //if (isStarted)
         {
             if (target)
             {
-                if (!target.GetComponent<BallController>().getPressed())
+                if (!target.GetComponent<BallController>().getPressed() && !move)
                 {
                     Vector3 targetCamPos = target.position + offset;
                     transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime);
                 }
+
+                if (move)
+                {
+                    //transform.position = Vector3.Lerp(transform.position, defaultPos, 0.02f);                 
+
+                    if (transform.position.x < 0.0f)
+                        transform.position += Vector3.right * (moveSpeed*2.0f) * Time.deltaTime;
+                    else
+                        transform.position -= Vector3.right * (moveSpeed*2.0f) * Time.deltaTime;
+
+                    if (transform.position.y < 0.0f)
+                        transform.position += Vector3.up * (moveSpeed * 2.0f) * Time.deltaTime;
+                    else
+                        transform.position -= Vector3.up * (moveSpeed * 2.0f) * Time.deltaTime;
+
+                    if (GetComponent<Camera>().orthographicSize >= 5.0f)
+                    {
+                        GetComponent<Camera>().orthographicSize -= 0.015f;
+                    }
+
+                    //Debug.Log(transform.position.x + " - " + transform.position.y);
+
+                    if (Mathf.Abs(transform.position.x) <= 0.2f && Mathf.Abs(transform.position.y) <= 0.2f)
+                    {                        
+                        Destroy(target.gameObject);
+                        move = false;                       
+                    }
+                }
             }
+
+
+
             if (transform.position.y < lowY)
                 transform.position = new Vector3(transform.position.x, lowY, transform.position.z);
             if (transform.position.y > highY)
@@ -61,5 +102,10 @@ public class CameraFollow : MonoBehaviour {
             if (transform.position.x > rightX)
                 transform.position = new Vector3(rightX, transform.position.y, transform.position.z);
         }
+    }
+
+    public void setMove()
+    {
+        move = true;
     }
 }

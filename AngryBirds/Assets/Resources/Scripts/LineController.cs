@@ -24,4 +24,9 @@ public class LineController : MonoBehaviour {
         line.SetPosition(0, pos1.position);
         line.SetPosition(1, pos2.position);
     }
+
+    public void setPos(Transform pos)
+    {
+        pos1 = pos;
+    }
 }
