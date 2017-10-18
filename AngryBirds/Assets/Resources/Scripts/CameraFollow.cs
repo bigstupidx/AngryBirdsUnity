@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour {
 
+    public GameObject playersManager;
     public Transform target;
+    public GameObject line1;
+    public GameObject line2;
     public float smoothing;
     public float moveSpeed;
     private Vector3 offset;
@@ -86,7 +89,8 @@ public class CameraFollow : MonoBehaviour {
                     if (Mathf.Abs(transform.position.x) <= 0.2f && Mathf.Abs(transform.position.y) <= 0.2f)
                     {                        
                         Destroy(target.gameObject);
-                        move = false;                       
+                        move = false;
+                        Invoke("respawnPlayer", 0.5f);
                     }
                 }
             }
@@ -104,8 +108,25 @@ public class CameraFollow : MonoBehaviour {
         }
     }
 
+    void respawnPlayer()
+    {
+        activeRopes();
+        playersManager.GetComponent<PlayersManager>().createPlayer();
+    }
+
+    void activeRopes()
+    {
+        line1.SetActive(true);
+        line2.SetActive(true);
+    }
+
     public void setMove()
     {
         move = true;
+    }
+
+    public void setTarget(Transform tg)
+    {
+        target = tg;
     }
 }

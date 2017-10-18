@@ -39,68 +39,22 @@ public class BallController : MonoBehaviour {
         GetComponent<SpringJoint2D>().connectedBody = hook;
 
         line1 = GameObject.Find("Line1");
-        line2 = GameObject.Find("Line2");
+        line2 = GameObject.Find("Line2");      
 
         line1.GetComponent<LineController>().setPos(transform.GetChild(0));
         line2.GetComponent<LineController>().setPos(transform.GetChild(0));
 
         line1.SetActive(true);
         line2.SetActive(true);
+
         GetComponent<TrailRenderer>().enabled = false;
 
         camera = GameObject.Find("Main Camera");
+        camera.GetComponent<CameraFollow>().setTarget(transform);
     }
 
 
     
-
-    void FixedUpdate()
-    {
-        
-
-       
-
-        /*if(isPressed)
-        {
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            if(Vector3.Distance(mousePos,hook.position) > maxDragDistance)
-            {
-                myRB.position = hook.position + (mousePos - hook.position).normalized * maxDragDistance;
-            }
-            else
-            {
-                myRB.position = mousePos;
-            }
-            UpdateLine();
-        }
-
-       
-        if (isFlying)
-        {
-            Debug.Log(camera.GetComponent<Camera>().orthographicSize);
-            camera.GetComponent<Camera>().orthographicSize += 0.01f;
-        
-        }
-
-        if(isReleased && Time.time >= flyTime && !isAdjusted)
-        {
-            //isFlying = true;
-            GetComponent<CircleCollider2D>().enabled = false;
-            GetComponent<PolygonCollider2D>().enabled = true;
-
-            Vector2 releasePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            float forceX = hook.position.x - releasePos.x;
-            float forceY = hook.position.y - releasePos.y;
-            myRB.AddForce(new Vector2(forceX, forceY), ForceMode2D.Impulse);
-
-            GetComponent<TrailRenderer>().enabled = true;
-            GetComponent<SpringJoint2D>().enabled = false;
-
-            this.enabled = false;
-            isAdjusted = true;
-        }*/
-    }
-
     void Update()
     {
 
@@ -190,15 +144,14 @@ public class BallController : MonoBehaviour {
 
     void release()
     {
-        //Vector2 releasePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //float forceX = hook.position.x - releasePos.x;
-        //float forceY = hook.position.y - releasePos.y;
-
-
+        line1.GetComponent<LineController>().setDefaultPos();
+        line2.GetComponent<LineController>().setDefaultPos();
 
         line1.SetActive(false);
         line2.SetActive(false);
+
         myAnim.SetBool("isJumping", true);
+        transform.GetChild(0).gameObject.SetActive(false);
 
         isReleased = true;
         flyTime = Time.time + releaseTime;

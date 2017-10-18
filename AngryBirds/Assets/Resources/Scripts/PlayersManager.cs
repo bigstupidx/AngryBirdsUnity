@@ -23,11 +23,14 @@ public class PlayersManager : MonoBehaviour {
 		
 	}
 
-    void createPlayer()
+    public void createPlayer()
     {
         GameObject playerPrefab = (GameObject)Resources.Load("Prefabs/Players/"+strPlayer, typeof(GameObject));
-        if(playerPrefab)
+        if (playerPrefab && numPlayers > 0)
+        {
             Instantiate(playerPrefab, playerPos.position, playerPrefab.transform.rotation);
+            numPlayers--;
+        }
     }
 
     public string getSelectedPlayer()

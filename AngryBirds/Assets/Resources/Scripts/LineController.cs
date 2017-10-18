@@ -29,4 +29,10 @@ public class LineController : MonoBehaviour {
     {
         pos1 = pos;
     }
+
+    public void setDefaultPos()
+    {
+        pos1 = pos2;
+        UpdateLine();
+    }
 }

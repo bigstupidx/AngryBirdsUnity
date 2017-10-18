@@ -4227,7 +4227,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d6ca2191edfb94449865e1f60203bd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playersManager: {fileID: 2002091667}
   target: {fileID: 699629712}
+  line1: {fileID: 1846405977}
+  line2: {fileID: 634228786}
   smoothing: 10
   moveSpeed: 4.5
   highY: 4
