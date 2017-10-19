@@ -52,10 +52,13 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Resources\Scripts\BallController.cs" />
+     <Compile Include="Assets\Resources\Scripts\BananaController.cs" />
      <Compile Include="Assets\Resources\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Resources\Scripts\EnemyController.cs" />
      <Compile Include="Assets\Resources\Scripts\LineController.cs" />
      <Compile Include="Assets\Resources\Scripts\PlayersManager.cs" />
+     <Compile Include="Assets\Resources\Scripts\Rotate.cs" />
+     <Compile Include="Assets\Resources\Scripts\SelfDestruction.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

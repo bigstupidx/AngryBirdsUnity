@@ -72,7 +72,7 @@ public class BallController : MonoBehaviour {
             release();
         }
 
-        if(isPressed)
+        if(isPressed && !isFlying && !isDead)
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if(Vector3.Distance(mousePos,hook.position) > maxDragDistance)
