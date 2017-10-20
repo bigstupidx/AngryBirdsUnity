@@ -406,6 +406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myAnim: {fileID: 112178100}
   health: 6
+  isDead: 0
 --- !u!95 &112178100
 Animator:
   serializedVersion: 3
@@ -740,6 +741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myAnim: {fileID: 155396379}
   health: 6
+  isDead: 0
 --- !u!95 &155396379
 Animator:
   serializedVersion: 3
@@ -1124,6 +1126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myAnim: {fileID: 278938147}
   health: 6
+  isDead: 0
 --- !u!95 &278938147
 Animator:
   serializedVersion: 3
@@ -2453,6 +2456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myAnim: {fileID: 769791864}
   health: 6
+  isDead: 0
 --- !u!95 &769791864
 Animator:
   serializedVersion: 3
@@ -2675,6 +2679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myAnim: {fileID: 798258750}
   health: 10
+  isDead: 0
 --- !u!95 &798258750
 Animator:
   serializedVersion: 3
@@ -3087,6 +3092,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myAnim: {fileID: 966091265}
   health: 8
+  isDead: 0
 --- !u!95 &966091265
 Animator:
   serializedVersion: 3
@@ -3944,6 +3950,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myAnim: {fileID: 1129196393}
   health: 10
+  isDead: 0
 --- !u!95 &1129196393
 Animator:
   serializedVersion: 3
