@@ -20,7 +20,8 @@ public class BallController : MonoBehaviour {
     
     public float releaseTime = 0.15f;
     public float maxDragDistance = 2.0f;
-    //public LineRenderer line;
+    public GameObject feather;
+
 
     private Rigidbody2D hook;
     private GameObject line1;
@@ -199,12 +200,14 @@ public class BallController : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D otherColl)
     {
+        if (!isDead)
+            Instantiate(feather, transform.position, feather.transform.rotation);
         myRB.freezeRotation = false;
         isDead = true;
         isFlying = false;
         myAnim.SetBool("isDead", true);
 
-        endAttackTime = Time.time + 3.0f;
+        endAttackTime = Time.time + 3.0f;      
     }
 
 

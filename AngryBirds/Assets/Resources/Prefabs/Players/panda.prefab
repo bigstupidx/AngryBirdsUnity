@@ -346,6 +346,7 @@ MonoBehaviour:
   myAnim: {fileID: 95453909676525402}
   releaseTime: 0.15
   maxDragDistance: 3.25
+  feather: {fileID: 1966631532955154, guid: a1d384fb43afe9f44acfefec39405748, type: 2}
 --- !u!212 &212119418055176928
 SpriteRenderer:
   m_ObjectHideFlags: 1
