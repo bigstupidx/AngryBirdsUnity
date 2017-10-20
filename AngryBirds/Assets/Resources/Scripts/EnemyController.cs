@@ -83,6 +83,7 @@ public class EnemyController : MonoBehaviour {
     {
         if(otherColl.relativeVelocity.magnitude > health)
         {
+            isDead = true;
             myAnim.SetBool("isDead", true);
             Invoke("makeDead", 5.0f);
         }

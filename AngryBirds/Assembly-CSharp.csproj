@@ -56,6 +56,7 @@
      <Compile Include="Assets\Resources\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Resources\Scripts\EnemyController.cs" />
      <Compile Include="Assets\Resources\Scripts\LineController.cs" />
+     <Compile Include="Assets\Resources\Scripts\ObstacleController.cs" />
      <Compile Include="Assets\Resources\Scripts\PlayersManager.cs" />
      <Compile Include="Assets\Resources\Scripts\Rotate.cs" />
      <Compile Include="Assets\Resources\Scripts\SelfDestruction.cs" />
