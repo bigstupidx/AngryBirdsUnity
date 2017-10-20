@@ -13,6 +13,7 @@ public class BallController : MonoBehaviour {
 
     private float endAttackTime;
     private float flyTime;
+    private float spawnCloundTime;
     private GameObject camera;
 
     public Rigidbody2D myRB;
@@ -35,6 +36,8 @@ public class BallController : MonoBehaviour {
         isAdjusted = false;
         isDead = false;
         movedSet = false;
+
+        spawnCloundTime = 0.0f;
 
         hook = GameObject.Find("Hook").GetComponent<Rigidbody2D>();
         GetComponent<SpringJoint2D>().connectedBody = hook;
@@ -96,6 +99,12 @@ public class BallController : MonoBehaviour {
         if(isFlying)
         {
             myAnim.SetFloat("verticalSpeed", myRB.velocity.y);
+        }
+
+        if(isFlying && Time.time >= spawnCloundTime && transform.position.x > (hook.transform.position.x+0.2f))
+        {
+            spawnCloud();
+            spawnCloundTime = Time.time + 0.075f;
         }
 
         if(isReleased && Time.time >= flyTime && !isAdjusted)
@@ -191,6 +200,12 @@ public class BallController : MonoBehaviour {
     {
         line1.GetComponent<LineController>().UpdateLine();
         line2.GetComponent<LineController>().UpdateLine();
+    }
+
+    void spawnCloud()
+    {
+        GameObject cloudPrefab = (GameObject)Resources.Load("Prefabs/Effects/cloud", typeof(GameObject));
+        Instantiate(cloudPrefab, transform.position, cloudPrefab.transform.rotation);
     }
 
     public bool getPressed()
