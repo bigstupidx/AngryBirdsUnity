@@ -201,7 +201,11 @@ public class BallController : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D otherColl)
     {
         if (!isDead)
+        {
             Instantiate(feather, transform.position, feather.transform.rotation);
+            GameObject smokePrefab = (GameObject)Resources.Load("Prefabs/Effects/smoke", typeof(GameObject));
+            Instantiate(smokePrefab, transform.position, smokePrefab.transform.rotation);
+        }
         myRB.freezeRotation = false;
         isDead = true;
         isFlying = false;
