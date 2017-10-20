@@ -57,7 +57,7 @@ public class EnemyController : MonoBehaviour {
         }*/
 
 
-        if(Time.time >= attackTime && !isAttacking && canAttack)
+        if(Time.time >= attackTime && !isAttacking && canAttack && !isDead)
         {
             Debug.Log("attacking");
             isAttacking = true;
