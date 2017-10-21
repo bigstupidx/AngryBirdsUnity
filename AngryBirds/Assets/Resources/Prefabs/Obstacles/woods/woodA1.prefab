@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1911134295514106}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.51, y: -0.07, z: 0}
+  m_LocalPosition: {x: 7.0527515, y: 1.2995124, z: 0}
   m_LocalScale: {x: 0.35, y: 0.35, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -119,6 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myAnim: {fileID: 95651525446355440}
   health: 8
+  woodDust: light wood dust PS
 --- !u!212 &212518757476602750
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -6,6 +6,7 @@ public class ObstacleController : MonoBehaviour {
 
     public Animator myAnim;
     public float health;
+    public string woodDust;
     private bool isDead;
 
 	// Use this for initialization
@@ -21,7 +22,7 @@ public class ObstacleController : MonoBehaviour {
             myAnim.SetBool("isDead", true);
             if (!isDead)
             {
-                GameObject dustPrefab = (GameObject)Resources.Load("Prefabs/Effects/wood dust PS", typeof(GameObject));
+                GameObject dustPrefab = (GameObject)Resources.Load("Prefabs/Effects/"+woodDust, typeof(GameObject));
                 Instantiate(dustPrefab, transform.position, dustPrefab.transform.rotation);
             }
             isDead = true;

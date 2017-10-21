@@ -335,6 +335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myAnim: {fileID: 68524692}
   health: 6
+  woodDust: wood dust PS
 --- !u!95 &68524692
 Animator:
   serializedVersion: 3
@@ -556,6 +557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myAnim: {fileID: 112178100}
   health: 6
+  woodDust: wood dust PS
 --- !u!95 &112178100
 Animator:
   serializedVersion: 3
@@ -1217,6 +1219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myAnim: {fileID: 278938147}
   health: 6
+  woodDust: wood dust PS
 --- !u!95 &278938147
 Animator:
   serializedVersion: 3
@@ -2321,6 +2324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myAnim: {fileID: 564836601}
   health: 6
+  woodDust: wood dust PS
 --- !u!95 &564836601
 Animator:
   serializedVersion: 3
@@ -2878,6 +2882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myAnim: {fileID: 766617396}
   health: 6
+  woodDust: wood dust PS
 --- !u!95 &766617396
 Animator:
   serializedVersion: 3
@@ -3028,6 +3033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myAnim: {fileID: 769791864}
   health: 6
+  woodDust: wood dust PS
 --- !u!95 &769791864
 Animator:
   serializedVersion: 3
@@ -3250,6 +3256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myAnim: {fileID: 798258750}
   health: 8
+  woodDust: wood dust PS
 --- !u!95 &798258750
 Animator:
   serializedVersion: 3
@@ -3499,6 +3506,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myAnim: {fileID: 845016881}
   health: 6
+  woodDust: wood dust PS
 --- !u!95 &845016881
 Animator:
   serializedVersion: 3
@@ -4442,6 +4450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myAnim: {fileID: 1135482823}
   health: 6
+  woodDust: wood dust PS
 --- !u!95 &1135482823
 Animator:
   serializedVersion: 3
@@ -4782,6 +4791,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myAnim: {fileID: 1455816802}
   health: 6
+  woodDust: wood dust PS
 --- !u!95 &1455816802
 Animator:
   serializedVersion: 3
@@ -5097,6 +5107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myAnim: {fileID: 1608640032}
   health: 6
+  woodDust: wood dust PS
 --- !u!95 &1608640032
 Animator:
   serializedVersion: 3

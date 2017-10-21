@@ -119,6 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myAnim: {fileID: 95723346379506370}
   health: 8
+  woodDust: wood dust PS
 --- !u!212 &212566527129933948
 SpriteRenderer:
   m_ObjectHideFlags: 1
