@@ -226,7 +226,7 @@ public class BallController : MonoBehaviour {
         isFlying = false;
         myAnim.SetBool("isDead", true);
 
-        endAttackTime = Time.time + 3.0f;      
+        endAttackTime = Time.time + 3.5f;      
     }
 
 

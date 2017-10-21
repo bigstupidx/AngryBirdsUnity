@@ -6,7 +6,7 @@ public class ObstacleController : MonoBehaviour {
 
     public Animator myAnim;
     public float health;
-    public bool isDead;
+    private bool isDead;
 
 	// Use this for initialization
 	void Start () 
@@ -16,7 +16,7 @@ public class ObstacleController : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D otherColl)
     {
-        if (otherColl.relativeVelocity.magnitude > health)
+        if (otherColl.relativeVelocity.magnitude > health && otherColl.gameObject.tag != "banana")
         {
             myAnim.SetBool("isDead", true);
             if (!isDead)

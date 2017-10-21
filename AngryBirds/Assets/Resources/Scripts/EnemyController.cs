@@ -59,7 +59,6 @@ public class EnemyController : MonoBehaviour {
 
         if(Time.time >= attackTime && !isAttacking && canAttack && !isDead)
         {
-            Debug.Log("attacking");
             isAttacking = true;
             myAnim.SetBool("isAttacking", true);
             attackTime = Time.time + attackDuration;
