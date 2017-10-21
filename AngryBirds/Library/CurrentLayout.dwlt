@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 1366
     height: 685
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 14048
+  controlID: 11
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 14142
+  controlID: 12
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 14234
+  controlID: 13
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -260,7 +260,7 @@ MonoBehaviour:
   m_MinSize: {x: 277, y: 271}
   m_MaxSize: {x: 4002, y: 8021}
   vertical: 1
-  controlID: 14049
+  controlID: 137
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -414,10 +414,10 @@ MonoBehaviour:
     width: 259
     height: 334
   m_TreeViewState:
-    scrollPos: {x: 0, y: 331}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 1afcffff000000006e2f000012300000
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: c4fbffff
+    m_LastClickedID: -1084
+    m_ExpandedIDs: 1afcffff00000000522f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -472,9 +472,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 15.375081, y: 1.1656936, z: 0}
+    m_Target: {x: -3.3446336, y: -0.006094034, z: 0}
     speed: 2
-    m_Value: {x: 15.375081, y: 1.1656936, z: 0}
+    m_Value: {x: -3.3446336, y: -0.006094034, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -501,9 +501,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 11.895447
+    m_Target: 3.3421607
     speed: 2
-    m_Value: 11.895447
+    m_Value: 3.3421607
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -640,19 +640,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Resources/Prefabs/Obstacles/woods
+    - Assets/Resources/Graphic/Players/bunny/Jump
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Resources/Prefabs/Obstacles/woods
+  - Assets/Resources/Graphic/Players/bunny/Jump
   m_LastFoldersGridSize: 96
   m_LastProjectPath: D:\4thYear\1stsemester\QLDAPM\Project\AngryBirds_Unity\AngryBirds
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 526}
-    m_SelectedIDs: f63d0000
-    m_LastClickedID: 15862
-    m_ExpandedIDs: 000000002026000036260000a82600002e270000a82a0000d02a0000dc2a00000e2b00003e2b0000182c0000d22c0000822d0000bc2d0000c02d0000da2d0000f03d000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 334}
+    m_SelectedIDs: 6a340000
+    m_LastClickedID: 13418
+    m_ExpandedIDs: 00000000222600003826000080260000b026000038270000c02a0000ea2a0000f62a0000282b0000582b0000302c0000e62c0000962d0000d02d0000d42d0000ee2d00004232000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -680,7 +680,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000002026000036260000a82600002e270000a82a0000d02a0000dc2a00000e2b00003e2b0000182c0000d22c0000822d0000bc2d0000c02d0000da2d0000f03d000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000222600003826000080260000b026000038270000c02a0000ea2a0000f62a0000282b0000582b0000302c0000e62c0000962d0000d02d0000d42d0000ee2d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -732,7 +732,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 212}
     m_GridSize: 96
   m_DirectoriesAreaWidth: 208
 --- !u!114 &20
