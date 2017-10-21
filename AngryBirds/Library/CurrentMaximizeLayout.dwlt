@@ -20,10 +20,10 @@ MonoBehaviour:
     y: 30
     width: 1366
     height: 635
-  m_MinSize: {x: 683, y: 492}
-  m_MaxSize: {x: 14004, y: 14042}
+  m_MinSize: {x: 683, y: 342}
+  m_MaxSize: {x: 12008, y: 8042}
   vertical: 0
-  controlID: 12907
+  controlID: 7933
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -120,10 +120,10 @@ MonoBehaviour:
     y: 0
     width: 1064
     height: 635
-  m_MinSize: {x: 406, y: 492}
-  m_MaxSize: {x: 10002, y: 14042}
+  m_MinSize: {x: 406, y: 342}
+  m_MaxSize: {x: 8006, y: 8042}
   vertical: 1
-  controlID: 12789
+  controlID: 7934
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 12790
+  controlID: 7935
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -200,10 +200,10 @@ MonoBehaviour:
     width: 259
     height: 334
   m_TreeViewState:
-    scrollPos: {x: 0, y: 331}
-    m_SelectedIDs: 8638fcff
-    m_LastClickedID: 0
-    m_ExpandedIDs: 1afcffff000000006e2f000012300000
+    scrollPos: {x: 0, y: 336}
+    m_SelectedIDs: 42310000
+    m_LastClickedID: 12610
+    m_ExpandedIDs: c4fbffff1afcffff000000004c310000a23100006c320000a4320000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -285,9 +285,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 15.375081, y: 1.1656936, z: 0}
+    m_Target: {x: 18.859486, y: -1.2367234, z: 0}
     speed: 2
-    m_Value: {x: 15.375081, y: 1.1656936, z: 0}
+    m_Value: {x: 18.859486, y: -1.2367234, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -314,9 +314,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 11.895447
+    m_Target: 7.3157864
     speed: 2
-    m_Value: 11.895447
+    m_Value: 7.3157864
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -365,9 +365,10 @@ MonoBehaviour:
     - {fileID: 1107040110879303138, guid: b0228b8557b4fa84e8a0ff86bc96b29e, type: 2}
     - {fileID: 1107653119637984890, guid: 867d23805edd0a3429e137d2a24c62e9, type: 2}
     - {fileID: 1107865683489654252, guid: 361dd155cb2b83e4dac98f94975d2083, type: 2}
+    - {fileID: 1107234106669231532, guid: 68af541082269db49a2440772ad8dd0d, type: 2}
     m_ValueSerializationHelper:
     - {x: 520.2, y: 169.8}
-    - {x: 464.2, y: 157.8}
+    - {x: 429.40002, y: 212.40001}
     - {x: 472.0001, y: 205.8}
     - {x: 464.2, y: 125.8}
     - {x: 427.00003, y: 185.8}
@@ -376,11 +377,12 @@ MonoBehaviour:
     - {x: 429.40002, y: 200.40001}
     - {x: 429.40002, y: 200.40001}
     - {x: 429.40002, y: 200.40001}
+    - {x: 429.40002, y: 200.40001}
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: d90e39ca1a5741f4aba030b3c2581d04,
+  m_AnimatorController: {fileID: 9100000, guid: 007e2179c48cbc745a3b7d082c697ffb,
     type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 1107208404498360092, guid: d90e39ca1a5741f4aba030b3c2581d04,
+  - m_Target: {fileID: 1107605839384468404, guid: 007e2179c48cbc745a3b7d082c697ffb,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -437,15 +439,15 @@ MonoBehaviour:
     y: 355
     width: 1064
     height: 280
-  m_MinSize: {x: 230, y: 250}
-  m_MaxSize: {x: 10000, y: 10000}
-  m_ActualView: {fileID: 12}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 12}
   - {fileID: 13}
   - {fileID: 14}
-  m_Selected: 0
-  m_LastSelected: 2
+  m_Selected: 2
+  m_LastSelected: 0
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -473,7 +475,7 @@ MonoBehaviour:
     width: 1062
     height: 259
   m_SearchFilter:
-    m_NameFilter: 
+    m_NameFilter: Player
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -484,19 +486,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Resources/Prefabs/Obstacles/woods
+    - Assets/Resources/Prefabs/Players
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Resources/Prefabs/Obstacles/woods
+  - Assets/Resources/Prefabs/Players
   m_LastFoldersGridSize: 96
   m_LastProjectPath: D:\4thYear\1stsemester\QLDAPM\Project\AngryBirds_Unity\AngryBirds
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 526}
-    m_SelectedIDs: f63d0000
-    m_LastClickedID: 15862
-    m_ExpandedIDs: 000000002026000036260000a82600002e270000a82a0000d02a0000dc2a00000e2b00003e2b0000182c0000d22c0000822d0000bc2d0000c02d0000da2d0000f03d000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 638}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 00000000202600003e26000092260000ce2600007c270000d8270000ca2b0000fc2b0000082c0000462c0000862c0000b62d00007a2e0000522f00009c2f0000a02f0000ca2f000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -524,7 +526,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000002026000036260000a82600002e270000a82a0000d02a0000dc2a00000e2b00003e2b0000182c0000d22c0000822d0000bc2d0000c02d0000da2d000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000202600003e26000092260000ce2600007c270000d8270000ca2b0000fc2b0000082c0000462c0000862c0000b62d00007a2e0000522f00009c2f0000a02f0000ca2f000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -549,9 +551,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 8638fcff
-    m_LastClickedInstanceID: -247674
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: a6310000
+    m_LastClickedInstanceID: 12710
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000204800008c2f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -656,7 +658,7 @@ MonoBehaviour:
   m_MinSize: {x: 277, y: 271}
   m_MaxSize: {x: 4002, y: 8021}
   vertical: 1
-  controlID: 12908
+  controlID: 7912
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -708,7 +710,7 @@ MonoBehaviour:
     y: 92
     width: 300
     height: 393
-  m_ScrollPosition: {x: 0, y: 0}
+  m_ScrollPosition: {x: 0, y: 244.95508}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: -178

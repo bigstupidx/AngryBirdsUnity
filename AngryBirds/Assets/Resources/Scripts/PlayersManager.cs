@@ -12,7 +12,7 @@ public class PlayersManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
-        strPlayer = "mouse";
+        strPlayer = "bunny";
         numPlayers = 3;
         createPlayer();
 	}
