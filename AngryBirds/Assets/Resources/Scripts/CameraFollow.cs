@@ -90,6 +90,7 @@ public class CameraFollow : MonoBehaviour {
                     {                        
                         Destroy(target.gameObject);
                         move = false;
+                        
                         Invoke("respawnPlayer", 0.5f);
                     }
                 }
@@ -111,7 +112,7 @@ public class CameraFollow : MonoBehaviour {
     void respawnPlayer()
     {
         activeRopes();
-        playersManager.GetComponent<PlayersManager>().createPlayer();
+        playersManager.GetComponent<PlayersManager>().getPlayerReady();
     }
 
     void activeRopes()

@@ -6,14 +6,18 @@ public class PlayersManager : MonoBehaviour {
 
     private string strPlayer;
     private int numPlayers;
+    private int currentPlayer;
 
     public Transform playerPos;
+    public Transform waitingPlayerPos;
 
 	// Use this for initialization
 	void Start () 
     {
         strPlayer = "bunny";
         numPlayers = 3;
+        currentPlayer = 0;
+        preparePlayers();
         createPlayer();
 	}
 	
@@ -30,6 +34,7 @@ public class PlayersManager : MonoBehaviour {
         {
             Instantiate(playerPrefab, playerPos.position, playerPrefab.transform.rotation);
             numPlayers--;
+            currentPlayer++;
         }
     }
 
@@ -41,6 +46,26 @@ public class PlayersManager : MonoBehaviour {
     public int getNumOfPlayers()
     {
         return numPlayers;
+    }
+
+    void preparePlayers()
+    {
+        for(int i=0; i<numPlayers-1;i++)
+        {
+            GameObject playerPrefab = (GameObject)Resources.Load("Prefabs/Waiting Players/waiting " + strPlayer, typeof(GameObject));
+            if(playerPrefab)
+            {              
+                Instantiate(playerPrefab, new Vector2(waitingPlayerPos.position.x - i * 0.6f, waitingPlayerPos.position.y), playerPrefab.transform.rotation);
+            }
+        }
+    }
+
+    public void getPlayerReady()
+    {
+        if(transform.childCount > 0)
+        {
+            transform.GetChild(0).gameObject.GetComponent<WaitingPlayerController>().setReady();
+        }
     }
 
 }
