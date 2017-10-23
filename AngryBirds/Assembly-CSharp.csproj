@@ -54,7 +54,8 @@
      <Compile Include="Assets\Resources\Scripts\BallController.cs" />
      <Compile Include="Assets\Resources\Scripts\BananaController.cs" />
      <Compile Include="Assets\Resources\Scripts\CameraFollow.cs" />
-     <Compile Include="Assets\Resources\Scripts\EnemyController.cs" />
+     <Compile Include="Assets\Resources\Scripts\GorillaAController.cs" />
+     <Compile Include="Assets\Resources\Scripts\GorillaBController.cs" />
      <Compile Include="Assets\Resources\Scripts\LineController.cs" />
      <Compile Include="Assets\Resources\Scripts\ObstacleController.cs" />
      <Compile Include="Assets\Resources\Scripts\PlayersManager.cs" />

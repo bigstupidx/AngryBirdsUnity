@@ -57,7 +57,14 @@ public class BallController : MonoBehaviour {
         camera.GetComponent<CameraFollow>().setTarget(transform);
     }
 
-
+    void FixedUpdate()
+    {
+        if (isFlying && Time.time >= spawnCloundTime && transform.position.x > (hook.transform.position.x + 0.2f))
+        {
+            spawnCloud();
+            spawnCloundTime = Time.time + 0.075f;
+        }
+    }
     
     void Update()
     {
@@ -101,11 +108,11 @@ public class BallController : MonoBehaviour {
             myAnim.SetFloat("verticalSpeed", myRB.velocity.y);
         }
 
-        if(isFlying && Time.time >= spawnCloundTime && transform.position.x > (hook.transform.position.x+0.2f))
+        /*if(isFlying && Time.time >= spawnCloundTime && transform.position.x > (hook.transform.position.x+0.2f))
         {
             spawnCloud();
             spawnCloundTime = Time.time + 0.075f;
-        }
+        }*/
 
         if(isReleased && Time.time >= flyTime && !isAdjusted)
         {
