@@ -56,6 +56,7 @@
      <Compile Include="Assets\Resources\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Resources\Scripts\GorillaAController.cs" />
      <Compile Include="Assets\Resources\Scripts\GorillaBController.cs" />
+     <Compile Include="Assets\Resources\Scripts\GorillaCController.cs" />
      <Compile Include="Assets\Resources\Scripts\LineController.cs" />
      <Compile Include="Assets\Resources\Scripts\ObstacleController.cs" />
      <Compile Include="Assets\Resources\Scripts\PlayersManager.cs" />
