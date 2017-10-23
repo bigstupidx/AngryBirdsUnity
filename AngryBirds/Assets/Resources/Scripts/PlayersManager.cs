@@ -55,7 +55,7 @@ public class PlayersManager : MonoBehaviour {
             GameObject playerPrefab = (GameObject)Resources.Load("Prefabs/Waiting Players/waiting " + strPlayer, typeof(GameObject));
             if(playerPrefab)
             {              
-                Instantiate(playerPrefab, new Vector2(waitingPlayerPos.position.x - i * 0.6f, waitingPlayerPos.position.y), playerPrefab.transform.rotation);
+                Instantiate(playerPrefab, new Vector2(waitingPlayerPos.position.x - i * 1.6f, waitingPlayerPos.position.y), playerPrefab.transform.rotation);
             }
         }
     }

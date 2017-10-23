@@ -32,11 +32,14 @@ public class WaitingPlayerController : MonoBehaviour {
         if (isReady)
         {
             myAnim.SetFloat("verticalSpeed", myRB.velocity.y);
-            if (transform.position.x < (pos.transform.position.x - 0.05f))
+            if (transform.position.x < (pos.transform.position.x - 0.015f))
+            {
+                myAnim.SetBool("isRunning", true);
                 Move();
+            }
             else
             {
-                if(!isJumping)
+                if (!isJumping)
                 {
                     isJumping = true;
                     Jump();
