@@ -8,7 +8,7 @@ public class WaitingPlayerController : MonoBehaviour {
     public Animator myAnim;
     public float forceX;
     public float forceY;
-    public Transform des;
+    //public Transform des;
 
     private GameObject pos;
     private GameObject playersManager;
