@@ -85,8 +85,6 @@ public class GorillaAController : MonoBehaviour
         {
             isDead = true;
             myAnim.SetBool("isDead", true);
-            if (transform.childCount > 0)
-                Destroy(transform.GetChild(0).gameObject);
             Invoke("makeDead", 5.0f);
         }
     }
