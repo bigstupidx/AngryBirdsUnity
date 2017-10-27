@@ -6,6 +6,7 @@ public class MisileController : MonoBehaviour {
 
     public float angle;
     public float speed;
+    public GameObject explosion;
 
 	// Use this for initialization
 	void Start () 
@@ -28,4 +29,14 @@ public class MisileController : MonoBehaviour {
         pos += transform.rotation * velocity;
         transform.position = pos;
     }
+
+    void OnTriggerEnter2D(Collider2D otherColl)
+    {
+        if(otherColl.tag == "Player")
+        {
+            Instantiate(explosion, transform.position, explosion.transform.rotation);
+            Destroy(gameObject);
+        }
+    }
+
 }

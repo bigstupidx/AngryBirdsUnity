@@ -40,9 +40,9 @@ GameObject:
   - component: {fileID: 114185734731577764}
   - component: {fileID: 60360516392454156}
   - component: {fileID: 114236972596108862}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: misile
-  m_TagString: banana
+  m_TagString: misile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,7 +84,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1395121822025492}
   m_LocalRotation: {x: 0, y: 0, z: -0.27982908, w: 0.96004987}
-  m_LocalPosition: {x: 0.1908381, y: 3.0788512, z: 0}
+  m_LocalPosition: {x: 9.104801, y: 4.55391, z: 0}
   m_LocalScale: {x: 0.35, y: 0.35, z: 1}
   m_Children:
   - {fileID: 4542366072159224}
@@ -166,6 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angle: -32.5
   speed: 6
+  explosion: {fileID: 1381637658152444, guid: 182c64197b1c99e4a9aa4f8d3a139222, type: 2}
 --- !u!114 &114236972596108862
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -76,7 +76,8 @@ public class GorillaAController : MonoBehaviour
 
     void Throw()
     {
-        Instantiate(weapon, attackPos.position, weapon.transform.rotation);
+        if(gameObject != null)
+            Instantiate(weapon, attackPos.position, weapon.transform.rotation);
     }
 
 	void OnCollisionEnter2D(Collision2D otherColl)
