@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 245
+  controlID: 11
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 246
+  controlID: 12
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 247
+  controlID: 13
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -260,7 +260,7 @@ MonoBehaviour:
   m_MinSize: {x: 277, y: 271}
   m_MaxSize: {x: 4002, y: 8021}
   vertical: 1
-  controlID: 351
+  controlID: 139
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -414,10 +414,10 @@ MonoBehaviour:
     width: 279
     height: 331
   m_TreeViewState:
-    scrollPos: {x: 0, y: 288}
-    m_SelectedIDs: 6a310000
-    m_LastClickedID: 0
-    m_ExpandedIDs: 16ddffffe4faffff1afcffff00000000223b0000723c0000
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 68fbffff
+    m_LastClickedID: -1176
+    m_ExpandedIDs: 1afcffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -472,9 +472,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 13.257093, y: 2.6796153, z: 0.296875}
+    m_Target: {x: 7.089598, y: 1.132514, z: 0.296875}
     speed: 2
-    m_Value: {x: 13.257093, y: 2.6796153, z: 0.296875}
+    m_Value: {x: 7.089598, y: 1.132514, z: 0.296875}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -501,9 +501,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 24.009369
+    m_Target: 12.677704
     speed: 2
-    m_Value: 24.009369
+    m_Value: 12.677704
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -708,19 +708,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Resources/Prefabs/Gorillas
+    - Assets/Resources/Graphic/Enemies/Gorilla boss C/Die
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Resources/Prefabs/Gorillas
+  - Assets/Resources/Graphic/Enemies/Gorilla boss C/Die
   m_LastFoldersGridSize: 96
   m_LastProjectPath: D:\4thYear\1stsemester\QLDAPM\Project\AngryBirds_Unity\AngryBirds
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 1003}
-    m_SelectedIDs: 6a310000
-    m_LastClickedID: 12650
-    m_ExpandedIDs: 00000000262600005a260000062700006027000096280000182900006a290000ba2b00004a2c000050300000b2300000c23000002e310000a63100000834000090350000ca360000ee3600006437000078370000d43700008040000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 459}
+    m_SelectedIDs: d8430000
+    m_LastClickedID: 17368
+    m_ExpandedIDs: 00000000282600005c2600000c270000662700009c2800001e29000070290000c02b0000502c000060300000c2300000d230000040310000ba3100001c340000a8350000e4360000083700007e37000092370000ee370000d0400000de40000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -748,7 +748,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000262600005a260000062700006027000096280000182900006a290000ba2b00004a2c000050300000b2300000c23000002e310000a63100000834000090350000ca360000ee3600006437000078370000d43700008040000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000282600005c2600000c270000662700009c2800001e29000070290000c02b0000502c000060300000c2300000d230000040310000ba3100001c340000a8350000e4360000083700007e37000092370000ee370000d0400000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
