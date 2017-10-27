@@ -22,6 +22,7 @@ public class BallController : MonoBehaviour {
     public float releaseTime = 0.15f;
     public float maxDragDistance = 2.0f;
     public GameObject feather;
+    public GameObject bodyparts;
 
 
     private Rigidbody2D hook;
@@ -234,6 +235,21 @@ public class BallController : MonoBehaviour {
         myAnim.SetBool("isDead", true);
 
         endAttackTime = Time.time + 3.5f;      
+    }
+
+    void OnTriggerEnter2D(Collider2D otherColl)
+    {
+        if(otherColl.tag == "misile" && !isDead)
+        {
+            Instantiate(bodyparts, transform.position, bodyparts.transform.rotation);
+            isDead = true;
+            endAttackTime = Time.time + 3.5f;  
+            //Destroy(gameObject);
+            GetComponent<SpriteRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+            GetComponent<CircleCollider2D>().enabled = false;
+            GetComponent<PolygonCollider2D>().enabled = false;
+            GetComponent<BoxCollider2D>().enabled = false;
+        }
     }
 
 
