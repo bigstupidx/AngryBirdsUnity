@@ -5,12 +5,14 @@ using UnityEngine;
 public class BananaController : MonoBehaviour {
 
     public Rigidbody2D myRB;
+    public float forceX, forceY;
+    public float torque;
 
 	// Use this for initialization
 	void Start () 
     {
-        myRB.AddForce(new Vector2(-6.0f, 3.0f), ForceMode2D.Impulse);
-        myRB.AddTorque(30.0f);
+        myRB.AddForce(new Vector2(forceX, forceY), ForceMode2D.Impulse);
+        myRB.AddTorque(torque);
 	}
 	
 	
