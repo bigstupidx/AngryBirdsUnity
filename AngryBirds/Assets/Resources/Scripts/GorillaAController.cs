@@ -76,7 +76,7 @@ public class GorillaAController : MonoBehaviour
 
     void Throw()
     {
-        if(gameObject != null)
+        if(attackPos != null)
             Instantiate(weapon, attackPos.position, weapon.transform.rotation);
     }
 

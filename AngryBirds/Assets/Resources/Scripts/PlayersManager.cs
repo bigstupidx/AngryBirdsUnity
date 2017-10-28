@@ -14,7 +14,7 @@ public class PlayersManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
-        strPlayer = "bunny";
+        strPlayer = "cat";
         numPlayers = 3;
         currentPlayer = 0;
         preparePlayers();
