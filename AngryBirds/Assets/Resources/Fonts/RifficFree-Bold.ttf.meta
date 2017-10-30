@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: aba0c3f3aac64c7408f384abe8de442c
+timeCreated: 1509333272
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Riffic Free
+  fontNames:
+  - Riffic Free
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

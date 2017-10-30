@@ -24,10 +24,20 @@ public class ObstacleController : MonoBehaviour {
             {
                 GameObject dustPrefab = (GameObject)Resources.Load("Prefabs/Effects/"+woodDust, typeof(GameObject));
                 Instantiate(dustPrefab, transform.position, dustPrefab.transform.rotation);
+                updateScore();
             }
-            isDead = true;
+            isDead = true;           
             Invoke("makeDead", 1.0f);
         }
+    }
+
+    void updateScore()
+    {
+        GameObject scoreManager = GameObject.Find("ScoreManager");
+        scoreManager.GetComponent<ScoreManager>().increaseScore(250);
+
+        GameObject scorePrefab = (GameObject)Resources.Load("Prefabs/Effects/+250", typeof(GameObject));
+        Instantiate(scorePrefab, transform.position, scorePrefab.transform.rotation);
     }
 
     void makeDead()
