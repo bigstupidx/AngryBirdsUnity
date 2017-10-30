@@ -10,6 +10,7 @@ public class BallController : MonoBehaviour {
     private bool isAdjusted;
     private bool isDead;
     private bool movedSet;
+    private bool isUsingSkill;
 
     private float endAttackTime;
     private float flyTime;
@@ -23,6 +24,7 @@ public class BallController : MonoBehaviour {
     public float maxDragDistance = 2.0f;
     public GameObject feather;
     public GameObject bodyparts;
+    public GameObject releasedObject;
 
 
     private Rigidbody2D hook;
@@ -37,6 +39,7 @@ public class BallController : MonoBehaviour {
         isAdjusted = false;
         isDead = false;
         movedSet = false;
+        isUsingSkill = false;
 
         spawnCloundTime = 0.0f;
 
@@ -82,6 +85,12 @@ public class BallController : MonoBehaviour {
             myRB.isKinematic = false;
             isFlying = true;
             release();
+        }
+
+        if(isFlying && !isDead && !isUsingSkill && Input.GetMouseButtonDown(0))
+        {
+            isUsingSkill = true;
+            performSkill();
         }
 
         if(isPressed && !isFlying && !isDead)
@@ -159,6 +168,13 @@ public class BallController : MonoBehaviour {
         release();
         //StartCoroutine(Release());
     }*/
+
+    void performSkill()
+    {
+        GameObject skillEffectPrefab = (GameObject)Resources.Load("Prefabs/Effects/skill effect", typeof(GameObject));
+        Instantiate(skillEffectPrefab, transform.position, skillEffectPrefab.transform.rotation);
+        Instantiate(releasedObject, transform.position, releasedObject.transform.rotation);
+    }
 
     void release()
     {

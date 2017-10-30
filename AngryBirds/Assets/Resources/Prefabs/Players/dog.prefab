@@ -375,6 +375,8 @@ MonoBehaviour:
   maxDragDistance: 3.25
   feather: {fileID: 1660757139717000, guid: 3fc4a98bebb0d0d4eb37aaf1fd9dc2d3, type: 2}
   bodyparts: {fileID: 1501187859907278, guid: 26088839c2f45ec45a124864b2d31b66, type: 2}
+  releasedObject: {fileID: 1651904423636372, guid: f4483a2db494a9349bc1313486d73f87,
+    type: 2}
 --- !u!212 &212030281057208448
 SpriteRenderer:
   m_ObjectHideFlags: 1
