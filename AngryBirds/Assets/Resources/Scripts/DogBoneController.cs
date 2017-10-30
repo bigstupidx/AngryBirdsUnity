@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DogBoneController : MonoBehaviour {
-
+public class ReleasedObjectController : MonoBehaviour
+{
     public Rigidbody2D myRB;
+    public float forceX, forceY;
+    public float torque;
 
 	// Use this for initialization
 	void Start () 
     {
-        myRB.AddForce(new Vector2(14.0f, -5.0f), ForceMode2D.Impulse);
-        myRB.AddTorque(-30.0f);
+        myRB.AddForce(new Vector2(forceX, forceY), ForceMode2D.Impulse);
+        myRB.AddTorque(torque);
         Destroy(gameObject, 5.0f);
 	}
 	

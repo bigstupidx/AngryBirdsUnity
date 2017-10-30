@@ -2902,21 +2902,6 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 61210619968483448, guid: 4df8c1370ec386f4fa2f7bd6d9fbe063,
-        type: 2}
-      propertyPath: m_SpriteTilingProperty.pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 61210619968483448, guid: 4df8c1370ec386f4fa2f7bd6d9fbe063,
-        type: 2}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 6.38
-      objectReference: {fileID: 0}
-    - target: {fileID: 61210619968483448, guid: 4df8c1370ec386f4fa2f7bd6d9fbe063,
-        type: 2}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 6.69
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4df8c1370ec386f4fa2f7bd6d9fbe063, type: 2}
   m_IsPrefabParent: 0

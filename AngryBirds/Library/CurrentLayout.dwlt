@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 15175
+  controlID: 4131
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 15190
+  controlID: 4111
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 15191
+  controlID: 4112
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -259,7 +259,7 @@ MonoBehaviour:
   m_MinSize: {x: 277, y: 292}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 15176
+  controlID: 4132
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -413,10 +413,10 @@ MonoBehaviour:
     width: 282
     height: 343
   m_TreeViewState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
+    scrollPos: {x: 0, y: 106}
+    m_SelectedIDs: fa060000
     m_LastClickedID: 0
-    m_ExpandedIDs: 72e6fdff1afcffff000000000244000030460000
+    m_ExpandedIDs: 1afcffff0000000010440000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -471,9 +471,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.85312676, y: 0.61154777, z: 0}
+    m_Target: {x: -2.7262785, y: 0.35356024, z: 0}
     speed: 2
-    m_Value: {x: -0.85312676, y: 0.61154777, z: 0}
+    m_Value: {x: -2.7262785, y: 0.35356024, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -500,9 +500,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 7.0308394
+    m_Target: 7.7810364
     speed: 2
-    m_Value: 7.0308394
+    m_Value: 7.7810364
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -678,7 +678,7 @@ MonoBehaviour:
     width: 1069
     height: 250
   m_SearchFilter:
-    m_NameFilter: 
+    m_NameFilter: Playe
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -689,19 +689,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Resources/Prefabs/Effects
+    - Assets/Resources/Prefabs/Players's skills
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Resources/Prefabs/Effects
+  - Assets/Resources/Prefabs/Players's skills
   m_LastFoldersGridSize: 96
   m_LastProjectPath: D:\4thYear\1stsemester\QLDAPM\Project\AngryBirds_Unity\AngryBirds
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 1527}
-    m_SelectedIDs: 4e330000
-    m_LastClickedID: 13134
-    m_ExpandedIDs: 00000000302600007a26000080270000c427000026280000fa290000d82a0000362b0000ba2d0000ae2e0000762f000062350000f435000018360000b4360000703700008c380000b8390000e23a00001a3d00000c3f0000403f0000fc3f000018400000b2400000dc4c0000de4c0000e04c0000e24c0000e44c0000e64c000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 1671}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 00000000322600007c26000082270000c627000028280000fc290000da2a0000382b0000c02d0000b42e00007c2f00006a350000fc35000020360000bc3600007837000094380000c0390000ea3a0000223d0000163f00004a3f00000640000022400000bc400000fe4c0000004d0000024d0000044d0000064d0000084d000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -729,7 +729,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000302600007a26000080270000c427000026280000fa290000d82a0000362b0000ba2d0000ae2e0000762f000062350000f435000018360000b4360000703700008c380000b8390000e23a00001a3d00000c3f0000403f0000fc3f000018400000b2400000dc4c0000de4c0000e04c0000e24c0000e44c0000e64c000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000322600007c26000082270000c627000028280000fc290000da2a0000382b0000c02d0000b42e00007c2f00006a350000fc35000020360000bc3600007837000094380000c0390000ea3a0000223d0000163f00004a3f00000640000022400000bc400000fe4c0000004d0000024d0000044d0000064d0000084d000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -781,7 +781,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 183}
+    m_ScrollPosition: {x: 0, y: 58}
     m_GridSize: 96
   m_DirectoriesAreaWidth: 208
 --- !u!114 &19
