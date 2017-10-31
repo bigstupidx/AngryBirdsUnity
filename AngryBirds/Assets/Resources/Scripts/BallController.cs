@@ -75,16 +75,24 @@ public class BallController : MonoBehaviour {
 
         if (Input.GetMouseButton(0))
         {
-            isPressed = true;
-            myRB.isKinematic = true;
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Debug.Log(mousePos.x);
+            if (mousePos.x <= -2.0f)
+            {
+                isPressed = true;
+                myRB.isKinematic = true;
+            }
         }
 
         if (Input.GetMouseButtonUp(0))
         {
-            isPressed = false;
-            myRB.isKinematic = false;
-            isFlying = true;
-            release();
+            if (isPressed)
+            {
+                isPressed = false;
+                myRB.isKinematic = false;
+                isFlying = true;
+                release();
+            }
         }
 
         if(isFlying && !isDead && !isUsingSkill && Input.GetMouseButtonDown(0))
