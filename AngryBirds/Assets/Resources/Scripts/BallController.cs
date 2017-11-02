@@ -249,7 +249,8 @@ public class BallController : MonoBehaviour {
     {
         if (!isDead)
         {
-            Instantiate(feather, transform.position, feather.transform.rotation);
+            if(feather)
+                Instantiate(feather, transform.position, feather.transform.rotation);
             GameObject smokePrefab = (GameObject)Resources.Load("Prefabs/Effects/smoke", typeof(GameObject));
             Instantiate(smokePrefab, transform.position, smokePrefab.transform.rotation);
         }
