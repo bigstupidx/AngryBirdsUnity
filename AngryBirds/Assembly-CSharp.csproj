@@ -71,6 +71,7 @@
      <Compile Include="Assets\Resources\Scripts\Rotate.cs" />
      <Compile Include="Assets\Resources\Scripts\ScoreManager.cs" />
      <Compile Include="Assets\Resources\Scripts\SelfDestruction.cs" />
+     <Compile Include="Assets\Resources\Scripts\SmallTurtleController.cs" />
      <Compile Include="Assets\Resources\Scripts\WaitingPlayerController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
     public GameObject levelCompletePanel;
+    public GameObject levelFailPanel;
     public Text levelScore;
     public Text txtScore;
     public Image imgPause;
@@ -29,7 +30,8 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		
 	}
 
@@ -39,6 +41,21 @@ public class GameManager : MonoBehaviour {
         Debug.Log("Num : " + currentDeadGorillaNum);
         if (currentDeadGorillaNum == gorillaNum)
             Invoke("makeWin", 5.0f);
+    }
+
+    public int getCurrentGorrillaDeadNum()
+    {
+        return currentDeadGorillaNum;
+    }
+
+    public int getRemainGorillaNum()
+    {
+        return (gorillaNum - currentDeadGorillaNum);
+    }
+
+    public void makeLose()
+    {
+        Invoke("showFailPanel", 1.0f);
     }
 
     int getRank(int score)
@@ -59,6 +76,13 @@ public class GameManager : MonoBehaviour {
         imgPause.enabled = false;
         levelCompletePanel.SetActive(true);
         Invoke("showRank", 1.25f);
+    }
+
+    void showFailPanel()
+    {
+        levelScore.enabled = false;
+        imgPause.enabled = false;
+        levelFailPanel.SetActive(true);
     }
 
     void showRank()

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour {
 
+    public GameObject gameManager;
     public GameObject playersManager;
     public Transform target;
     public GameObject line1;
@@ -89,6 +90,12 @@ public class CameraFollow : MonoBehaviour {
                     if (Mathf.Abs(transform.position.x) <= 0.2f && Mathf.Abs(transform.position.y) <= 0.2f)
                     {                        
                         Destroy(target.gameObject);
+
+                        if (playersManager.GetComponent<PlayersManager>().getRemainPlayersNum() == 0 && gameManager.GetComponent<GameManager>().getRemainGorillaNum() > 0)
+                        {
+                            gameManager.GetComponent<GameManager>().makeLose();
+                        }
+
                         move = false;
                         
                         Invoke("respawnPlayer", 0.5f);

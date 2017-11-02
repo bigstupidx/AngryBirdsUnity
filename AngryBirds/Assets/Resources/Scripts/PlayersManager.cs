@@ -48,6 +48,11 @@ public class PlayersManager : MonoBehaviour {
         return numPlayers;
     }
 
+    public int getRemainPlayersNum()
+    {
+        return numPlayers;
+    }
+
     void preparePlayers()
     {
         for(int i=0; i<numPlayers-1;i++)
