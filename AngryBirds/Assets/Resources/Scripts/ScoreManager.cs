@@ -21,5 +21,8 @@ public class ScoreManager : MonoBehaviour {
         txtScore.text = "Score : " + currentLevelScore.ToString();
     }
 
-
+    public int getScore()
+    {
+        return currentLevelScore;
+    }
 }

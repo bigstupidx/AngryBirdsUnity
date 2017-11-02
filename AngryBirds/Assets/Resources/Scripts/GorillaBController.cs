@@ -48,7 +48,10 @@ public class GorillaBController : MonoBehaviour {
         if (otherColl.relativeVelocity.magnitude > health)
         {
             if (!isDead)
+            {
                 updateScore();
+                updateDeadNum();
+            }
             isDead = true;
             myAnim.SetBool("isDead", true);
             Invoke("makeDead", 5.0f);
@@ -62,6 +65,12 @@ public class GorillaBController : MonoBehaviour {
 
         GameObject scorePrefab = (GameObject)Resources.Load("Prefabs/Effects/+2000", typeof(GameObject));
         Instantiate(scorePrefab, transform.position, scorePrefab.transform.rotation);
+    }
+
+    void updateDeadNum()
+    {
+        GameObject gameManager = GameObject.Find("GameManager");
+        gameManager.GetComponent<GameManager>().increaseDeadGorillaNum();
     }
 
     void makeDead()

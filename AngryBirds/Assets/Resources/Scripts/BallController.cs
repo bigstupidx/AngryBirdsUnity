@@ -76,7 +76,7 @@ public class BallController : MonoBehaviour {
         if (Input.GetMouseButton(0))
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Debug.Log(mousePos.x);
+            //Debug.Log(mousePos.x);
             if (mousePos.x <= -2.0f)
             {
                 isPressed = true;
