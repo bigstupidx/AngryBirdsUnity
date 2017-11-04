@@ -9813,6 +9813,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 61734834066602140, guid: 8bbf19779a0e9d3489e268db0d048015,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8bbf19779a0e9d3489e268db0d048015, type: 2}
   m_IsPrefabParent: 0
