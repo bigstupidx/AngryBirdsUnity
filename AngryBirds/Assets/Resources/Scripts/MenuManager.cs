@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour {
 
+    public GameObject levelLoader;
+
     public Image imgPlay;
     public Image imgGame;
     public Image imgRate;
@@ -115,5 +117,11 @@ public class MenuManager : MonoBehaviour {
     {
         comingsoonPanel.GetComponent<Animator>().SetBool("isClosed", false);
         comingsoonPanel.SetActive(false);
+    }
+
+
+    public void OnButtonLevelPressed(int levelIndex)
+    {
+        levelLoader.GetComponent<LevelLoader>().LoadLevel(levelIndex);
     }
 }
