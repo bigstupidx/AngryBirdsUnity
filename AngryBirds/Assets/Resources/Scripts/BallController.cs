@@ -63,15 +63,6 @@ public class BallController : MonoBehaviour {
 
     void FixedUpdate()
     {
-        if (isFlying && Time.time >= spawnCloundTime && transform.position.x > (hook.transform.position.x + 0.2f))
-        {
-            spawnCloud();
-            spawnCloundTime = Time.time + 0.075f;
-        }
-    }
-    
-    void Update()
-    {
 
         if (Input.GetMouseButton(0))
         {
@@ -126,11 +117,7 @@ public class BallController : MonoBehaviour {
             myAnim.SetFloat("verticalSpeed", myRB.velocity.y);
         }
 
-        /*if(isFlying && Time.time >= spawnCloundTime && transform.position.x > (hook.transform.position.x+0.2f))
-        {
-            spawnCloud();
-            spawnCloundTime = Time.time + 0.075f;
-        }*/
+        
 
         if(isReleased && Time.time >= flyTime && !isAdjusted)
         {
@@ -146,7 +133,6 @@ public class BallController : MonoBehaviour {
             GetComponent<TrailRenderer>().enabled = true;
             GetComponent<SpringJoint2D>().enabled = false;
 
-            //this.enabled = false;
             isAdjusted = true;
         }
 
@@ -155,6 +141,94 @@ public class BallController : MonoBehaviour {
             camera.GetComponent<CameraFollow>().setMove();
             movedSet = true;
         }
+
+        if (isFlying && Time.time >= spawnCloundTime && transform.position.x > (hook.transform.position.x + 0.2f))
+        {
+            spawnCloud();
+            spawnCloundTime = Time.time + 0.075f;
+        }
+    }
+    
+    void Update()
+    {
+
+        /*if (Input.GetMouseButton(0))
+        {
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            //Debug.Log(mousePos.x);
+            if (mousePos.x <= -2.0f)
+            {
+                isPressed = true;
+                myRB.isKinematic = true;
+            }
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            if (isPressed)
+            {
+                isPressed = false;
+                myRB.isKinematic = false;
+                isFlying = true;
+                release();
+            }
+        }
+
+        if(isFlying && !isDead && !isUsingSkill && Input.GetMouseButtonDown(0))
+        {
+            isUsingSkill = true;
+            performSkill();
+        }
+
+        if(isPressed && !isFlying && !isDead)
+        {
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if(Vector3.Distance(mousePos,hook.position) > maxDragDistance)
+            {
+                myRB.position = hook.position + (mousePos - hook.position).normalized * maxDragDistance;
+            }
+            else
+            {
+                myRB.position = mousePos;
+            }
+            UpdateLine();
+        }
+
+        if (isFlying && camera.GetComponent<Camera>().orthographicSize <= 6.75f)
+        {
+            //Debug.Log(camera.GetComponent<Camera>().orthographicSize);
+            camera.GetComponent<Camera>().orthographicSize += 0.02f;       
+        }
+
+        if(isFlying)
+        {
+            myAnim.SetFloat("verticalSpeed", myRB.velocity.y);
+        }
+
+        
+
+        if(isReleased && Time.time >= flyTime && !isAdjusted)
+        {
+            isFlying = true;
+            GetComponent<CircleCollider2D>().enabled = false;
+            GetComponent<PolygonCollider2D>().enabled = true;
+
+            Vector2 releasePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            float forceX = hook.position.x - releasePos.x;
+            float forceY = hook.position.y - releasePos.y;
+            myRB.AddForce(new Vector2(forceX, forceY), ForceMode2D.Impulse);
+
+            GetComponent<TrailRenderer>().enabled = true;
+            GetComponent<SpringJoint2D>().enabled = false;
+
+            isAdjusted = true;
+        }
+
+        if(isDead && !movedSet && Time.time >= endAttackTime)
+        {
+            camera.GetComponent<CameraFollow>().setMove();
+            movedSet = true;
+        }*/
     
     }
   
