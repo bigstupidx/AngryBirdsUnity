@@ -69,6 +69,7 @@
      <Compile Include="Assets\Resources\Scripts\ObstacleController.cs" />
      <Compile Include="Assets\Resources\Scripts\PauseManager.cs" />
      <Compile Include="Assets\Resources\Scripts\PlayersManager.cs" />
+     <Compile Include="Assets\Resources\Scripts\PlotController.cs" />
      <Compile Include="Assets\Resources\Scripts\ReleasedObjectController.cs" />
      <Compile Include="Assets\Resources\Scripts\Rotate.cs" />
      <Compile Include="Assets\Resources\Scripts\ScoreManager.cs" />
