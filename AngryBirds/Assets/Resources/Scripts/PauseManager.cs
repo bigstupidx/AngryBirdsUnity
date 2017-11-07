@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PauseManager : MonoBehaviour {
 
     public GameObject pausePanel;
+    public GameObject levelLoader;
 
     public Image imgPause;
     public Image imgMusic;
@@ -98,5 +99,18 @@ public class PauseManager : MonoBehaviour {
         }
     }
 
+    public void OnButtonRestartPressed(int levelIndex)
+    {
+        Time.timeScale = 1.0f;
+        pausePanel.SetActive(false);
+        levelLoader.GetComponent<LevelLoader>().LoadLevel(levelIndex);
+    }
+
+    public void OnButtonExitPressed()
+    {
+        Time.timeScale = 1.0f;
+        pausePanel.SetActive(false);
+        levelLoader.GetComponent<LevelLoader>().LoadLevel(2);
+    }
     
 }

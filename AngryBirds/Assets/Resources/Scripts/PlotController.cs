@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlotController : MonoBehaviour {
 
     public GameObject vsImage;
+    public GameObject levelLoader;
 
     private float changeImageTime;
     private int index;
@@ -37,5 +38,11 @@ public class PlotController : MonoBehaviour {
     void showVSImage()
     {
         vsImage.SetActive(true);
+        Invoke("loadMenu", 3.0f);
+    }
+
+    void loadMenu()
+    {
+        levelLoader.GetComponent<LevelLoader>().LoadLevel(2);
     }
 }

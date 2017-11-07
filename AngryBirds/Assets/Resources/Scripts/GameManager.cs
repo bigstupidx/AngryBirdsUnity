@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour {
     public void increaseDeadGorillaNum()
     {
         currentDeadGorillaNum++;
-        Debug.Log("Num : " + currentDeadGorillaNum);
+        //Debug.Log("Num : " + currentDeadGorillaNum);
         if (currentDeadGorillaNum == gorillaNum)
             Invoke("makeWin", 5.0f);
     }

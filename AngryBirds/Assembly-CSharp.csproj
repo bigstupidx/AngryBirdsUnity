@@ -61,6 +61,7 @@
      <Compile Include="Assets\Resources\Scripts\GorillaBController.cs" />
      <Compile Include="Assets\Resources\Scripts\GorillaBossCController.cs" />
      <Compile Include="Assets\Resources\Scripts\GorillaCController.cs" />
+     <Compile Include="Assets\Resources\Scripts\IntroController.cs" />
      <Compile Include="Assets\Resources\Scripts\LevelLoader.cs" />
      <Compile Include="Assets\Resources\Scripts\LevelManager.cs" />
      <Compile Include="Assets\Resources\Scripts\LineController.cs" />
