@@ -23,7 +23,6 @@ public class PlotController : MonoBehaviour {
     {
 		if(Time.time >= changeImageTime && index < 7)
         {
-            Debug.Log("a");
             index++;
             GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Graphic/UI/Plot/" + index.ToString());
             changeImageTime = Time.time + 6.0f;

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class MenuManager : MonoBehaviour {
 
     public GameObject levelLoader;
+    public GameObject playerSelectPanel;
 
     public Image imgPlay;
     public Image imgGame;
@@ -21,14 +22,12 @@ public class MenuManager : MonoBehaviour {
     public GameObject comingsoonPanel;
     public Image imgOK;
 
-
-    private bool isAnyButtonPressed;
+    private int level;
 
     // Use this for initialization
     void Start ()
     {
-        isAnyButtonPressed = false;
-
+        level = 1;
     }
 	
 	// Update is called once per frame
@@ -122,6 +121,18 @@ public class MenuManager : MonoBehaviour {
 
     public void OnButtonLevelPressed(int levelIndex)
     {
-        levelLoader.GetComponent<LevelLoader>().LoadLevel(levelIndex);
+        level = levelIndex;
+        playerSelectPanel.SetActive(true);       
+    }
+
+    public void OnButtonOKPressed()
+    {
+        playerSelectPanel.SetActive(false);
+        levelLoader.GetComponent<LevelLoader>().LoadLevel(level);
+    }
+
+    public void OnButtonClosePressed()
+    {
+        playerSelectPanel.SetActive(false);
     }
 }
