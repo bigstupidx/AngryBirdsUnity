@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayersManager : MonoBehaviour {
 
-    private string strPlayer;
-    private int numPlayers;
-    private int currentPlayer;
+    public string strPlayer;
+    public int numPlayers;
+    public int currentPlayer;
 
     public Transform playerPos;
     public Transform waitingPlayerPos;
@@ -14,9 +14,9 @@ public class PlayersManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
-        strPlayer = "panda";
+        /*strPlayer = "panda";
         numPlayers = 3;
-        currentPlayer = 0;
+        currentPlayer = 0;*/
         preparePlayers();
         createPlayer();
 	}
