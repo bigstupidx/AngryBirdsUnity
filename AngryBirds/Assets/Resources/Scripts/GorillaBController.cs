@@ -6,6 +6,7 @@ public class GorillaBController : MonoBehaviour {
 
     public float health;
     public Animator myAnim;
+    public GameObject scorePS;
 
     private float roarTime;
     private float roarDuration;
@@ -51,6 +52,23 @@ public class GorillaBController : MonoBehaviour {
             {
                 updateScore();
                 updateDeadNum();
+                playDeadSFX();
+            }
+            isDead = true;
+            myAnim.SetBool("isDead", true);
+            Invoke("makeDead", 5.0f);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "explosion" || collision.tag == "saw")
+        {
+            if (!isDead)
+            {
+                updateScore();
+                updateDeadNum();
+                playDeadSFX();
             }
             isDead = true;
             myAnim.SetBool("isDead", true);
@@ -63,8 +81,10 @@ public class GorillaBController : MonoBehaviour {
         GameObject scoreManager = GameObject.Find("ScoreManager");
         scoreManager.GetComponent<ScoreManager>().increaseScore(2000);
 
-        GameObject scorePrefab = (GameObject)Resources.Load("Prefabs/Effects/+2000", typeof(GameObject));
-        Instantiate(scorePrefab, transform.position, scorePrefab.transform.rotation);
+        /*GameObject scorePrefab = (GameObject)Resources.Load("Prefabs/Effects/+2000", typeof(GameObject));
+        Instantiate(scorePrefab, transform.position, scorePrefab.transform.rotation);*/
+        scorePS.transform.position = transform.position;
+        scorePS.SetActive(true);   
     }
 
     void updateDeadNum()
@@ -75,6 +95,12 @@ public class GorillaBController : MonoBehaviour {
 
     void makeDead()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+    }
+
+    void playDeadSFX()
+    {
+        GameObject soundManager = GameObject.Find("SoundManager");
+        soundManager.GetComponent<SoundManager>().playMoanSound();
     }
 }

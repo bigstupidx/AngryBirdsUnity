@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayersManager : MonoBehaviour {
 
-    public string strPlayer;
-    public int numPlayers;
-    public int currentPlayer;
+    private string strPlayer;
+    private int numPlayers;
+    private int currentPlayer;
 
     public Transform playerPos;
     public Transform waitingPlayerPos;
@@ -14,18 +14,25 @@ public class PlayersManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
-        /*strPlayer = "panda";
-        numPlayers = 3;
-        currentPlayer = 0;*/
+        /*strPlayer = "gecko";
+        numPlayers = 4;
+        currentPlayer = 0;
         preparePlayers();
-        createPlayer();
+        createPlayer();*/
 	}
 	
-	// Update is called once per frame
-	void Update () 
+	public void prepare()
     {
-		
-	}
+        for(int i=0;i<PlayersInfo.playersInfo.getList().Count;i++)
+        {
+            if (PlayersInfo.playersInfo.getList()[i].getSelected())
+                strPlayer = PlayersInfo.playersInfo.getList()[i].getName();
+        }
+        numPlayers = 4;
+        currentPlayer = 0;
+        preparePlayers();
+        createPlayer();
+    }
 
     public void createPlayer()
     {

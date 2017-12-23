@@ -6,6 +6,7 @@ public class GorillaCController : MonoBehaviour {
 
     public float health;
     public Animator myAnim;
+    public GameObject scorePS;
 
     private bool isDead;
 
@@ -13,12 +14,6 @@ public class GorillaCController : MonoBehaviour {
     {
         isDead = false;
     }
-
-    void Update()
-    {
-
-    }
-
 
     void OnCollisionEnter2D(Collision2D otherColl)
     {
@@ -28,6 +23,23 @@ public class GorillaCController : MonoBehaviour {
             {
                 updateScore();
                 updateDeadNum();
+                playDeadSFX();
+            }
+            isDead = true;
+            myAnim.SetBool("isDead", true);
+            Invoke("makeDead", 5.0f);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "explosion" || collision.tag == "saw")
+        {
+            if (!isDead)
+            {
+                updateScore();
+                updateDeadNum();
+                playDeadSFX();
             }
             isDead = true;
             myAnim.SetBool("isDead", true);
@@ -40,8 +52,10 @@ public class GorillaCController : MonoBehaviour {
         GameObject scoreManager = GameObject.Find("ScoreManager");
         scoreManager.GetComponent<ScoreManager>().increaseScore(2000);
 
-        GameObject scorePrefab = (GameObject)Resources.Load("Prefabs/Effects/+2000", typeof(GameObject));
-        Instantiate(scorePrefab, transform.position, scorePrefab.transform.rotation);
+        /*GameObject scorePrefab = (GameObject)Resources.Load("Prefabs/Effects/+2000", typeof(GameObject));
+        Instantiate(scorePrefab, transform.position, scorePrefab.transform.rotation);*/
+
+        scorePS.SetActive(true);
     }
 
     void updateDeadNum()
@@ -52,7 +66,12 @@ public class GorillaCController : MonoBehaviour {
 
     void makeDead()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
-	
+
+    void playDeadSFX()
+    {
+        GameObject soundManager = GameObject.Find("SoundManager");
+        soundManager.GetComponent<SoundManager>().playMoanSound();
+    }
 }

@@ -9,6 +9,7 @@ public class GorillaAController : MonoBehaviour
     public Animator myAnim;
     public GameObject weapon;
     public Transform attackPos;
+    public GameObject scorePS;
 
     private float roarTime;
     private float roarDuration;
@@ -37,26 +38,14 @@ public class GorillaAController : MonoBehaviour
 
     void Update()
     {
-        /*if(Time.time >= roarTime && isRoaring)
-        {
-            roarTime = Time.time + Random.Range(3.0f, 5.0f);
-            isRoaring = false;
-            myAnim.SetBool("isRoaring", false);
-        }*/
-
+       
         if(Time.time >= attackTime && isAttacking)
         {
             isAttacking = false;
             myAnim.SetBool("isAttacking", false);
         }
 
-        /*if(Time.time >= roarTime && !isRoaring)
-        {
-            isRoaring = true;
-            myAnim.SetBool("isRoaring", true);
-            roarTime = Time.time + roarDuration;
-        }*/
-
+       
 
         if(Time.time >= attackTime && !isAttacking && canAttack && !isDead)
         {
@@ -76,8 +65,9 @@ public class GorillaAController : MonoBehaviour
 
     void Throw()
     {
-        if(attackPos != null)
-            Instantiate(weapon, attackPos.position, weapon.transform.rotation);
+        GameObject soundManager = GameObject.Find("SoundManager");
+        soundManager.GetComponent<SoundManager>().playGorillaThrowSound();
+        Instantiate(weapon, attackPos.position, weapon.transform.rotation);
     }
 
 	void OnCollisionEnter2D(Collision2D otherColl)
@@ -88,18 +78,34 @@ public class GorillaAController : MonoBehaviour
             {
                 updateScore();
                 updateDeadNum();
+                playDeadSFX();
             }
             isDead = true;
             myAnim.SetBool("isDead", true);
             if (transform.childCount > 0)
-                Destroy(transform.GetChild(0).gameObject);           
+                transform.GetChild(0).gameObject.SetActive(false);
             Invoke("makeDead", 5.0f);
         }
     }
 
-    void OnTriggerEnter2D(Collider2D otherColl)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(otherColl.tag == "Player")
+        if (collision.tag == "explosion" || collision.tag == "saw")
+        {
+            if (!isDead)
+            {
+                updateScore();
+                updateDeadNum();
+                playDeadSFX();
+            }
+            isDead = true;
+            myAnim.SetBool("isDead", true);
+            if (transform.childCount > 0)
+                transform.GetChild(0).gameObject.SetActive(false);
+            Invoke("makeDead", 5.0f);
+        }
+
+        if (collision.tag == "Player")
         {
             canAttack = true;
         }
@@ -111,6 +117,8 @@ public class GorillaAController : MonoBehaviour
         {
             canAttack = false;
         }
+
+        
     }
 
     void updateScore()
@@ -118,8 +126,10 @@ public class GorillaAController : MonoBehaviour
         GameObject scoreManager = GameObject.Find("ScoreManager");
         scoreManager.GetComponent<ScoreManager>().increaseScore(2000);
 
-        GameObject scorePrefab = (GameObject)Resources.Load("Prefabs/Effects/+2000", typeof(GameObject));
-        Instantiate(scorePrefab, transform.position, scorePrefab.transform.rotation);
+        /*GameObject scorePrefab = (GameObject)Resources.Load("Prefabs/Effects/+2000", typeof(GameObject));
+        Instantiate(scorePrefab, transform.position, scorePrefab.transform.rotation);*/
+
+        scorePS.SetActive(true);
     }
 
     void updateDeadNum()
@@ -130,8 +140,13 @@ public class GorillaAController : MonoBehaviour
 
     void makeDead()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
+    void playDeadSFX()
+    {
+        GameObject soundManager = GameObject.Find("SoundManager");
+        soundManager.GetComponent<SoundManager>().playMoanSound();
+    }
 
 }

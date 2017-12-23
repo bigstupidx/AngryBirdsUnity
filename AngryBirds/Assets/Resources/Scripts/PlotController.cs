@@ -17,6 +17,7 @@ public class PlotController : MonoBehaviour {
         changeImageTime = Time.time + 6.0f;
         index = 1;
         set = false;
+        levelLoader.GetComponent<SaveLoadSystem>().Load();
     }
 	
 	// Update is called once per frame
@@ -43,6 +44,8 @@ public class PlotController : MonoBehaviour {
 
     void loadMenu()
     {
+        SettingInfo.settingInfo.setIntroSeen(true);
+        levelLoader.GetComponent<SaveLoadSystem>().Save();
         levelLoader.GetComponent<LevelLoader>().LoadLevel(2);
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReleasedObjectController : MonoBehaviour
+public class DogBoneController : MonoBehaviour
 {
     public Rigidbody2D myRB;
     public float forceX, forceY;

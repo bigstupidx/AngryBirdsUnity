@@ -1,0 +1,150 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1775299364882732}
+  m_IsPrefabParent: 1
+--- !u!1 &1775299364882732
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4649420953162996}
+  - component: {fileID: 82015589706616194}
+  - component: {fileID: 114058485244059068}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4649420953162996
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1775299364882732}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &82015589706616194
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1775299364882732}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b3284b1cc69b430498aabe8659adb57c, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!114 &114058485244059068
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1775299364882732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d01e54e51ba732428cc554c4bc37723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAS: {fileID: 82015589706616194}
+  beingShotSFX: {fileID: 8300000, guid: 5c980246901d98e46a82962188350c3e, type: 3}
+  jumpSFX: {fileID: 8300000, guid: e82a08b86a8fe9648906cc07bb4da067, type: 3}
+  hitSFX: {fileID: 8300000, guid: fed3e825a937c364884e0d3052a9b5bd, type: 3}
+  throwSFX: {fileID: 8300000, guid: 32cc9f8466526db41963413b82f7578e, type: 3}
+  iceBreakSFX: {fileID: 8300000, guid: 325042beeb1dded4b9bedb674a1f5599, type: 3}
+  woodBreakSFX: {fileID: 8300000, guid: ba8f897f93e0ceb489f15bcb234ec63d, type: 3}
+  rockBreakSFX: {fileID: 8300000, guid: 74bf1f1ebfa93e74da8563ca54e1760c, type: 3}
+  moanSFX: {fileID: 8300000, guid: 6b5537c53633273489237d86473b946c, type: 3}
+  gorillaThrowSFX: {fileID: 8300000, guid: e95fd35d240a0ca498356fa9861e92fb, type: 3}
+  winSFX: {fileID: 8300000, guid: fe8288456f53570428e3dbcd7926c35e, type: 3}
+  starSFX: {fileID: 8300000, guid: 55fdfa86958a684419bdc1db4fb9ff4a, type: 3}
+  failSFX: {fileID: 8300000, guid: f0810c756004db4428d35417da5c79d6, type: 3}
+  btnSFX: {fileID: 8300000, guid: c429956d6f66f2f458c9638e5beaeff6, type: 3}
+  slideBtnSFX: {fileID: 8300000, guid: 83f6382bccd205f4780f9307f3e99e8d, type: 3}
+  unlockPlayerSFX: {fileID: 8300000, guid: 81ecf6c8d20367d43b6084a4ce3f6bcf, type: 3}

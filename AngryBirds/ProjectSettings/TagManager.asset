@@ -8,6 +8,9 @@ TagManager:
   - banana
   - bow
   - misile
+  - bomb
+  - explosion
+  - saw
   layers:
   - Default
   - TransparentFX
@@ -25,8 +28,8 @@ TagManager:
   - bow
   - hat
   - player's objects
-  - 
-  - 
+  - saw
+  - ground
   - 
   - 
   - 

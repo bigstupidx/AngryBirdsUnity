@@ -42,6 +42,8 @@ public class WaitingPlayerController : MonoBehaviour {
                 if (!isJumping)
                 {
                     isJumping = true;
+                    GameObject soundManager = GameObject.Find("SoundManager");
+                    soundManager.GetComponent<SoundManager>().playJumpSound();
                     Jump();
                 }
             }

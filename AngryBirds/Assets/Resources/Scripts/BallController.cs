@@ -24,8 +24,8 @@ public class BallController : MonoBehaviour {
     public float maxDragDistance = 2.0f;
     public GameObject feather;
     public GameObject bodyparts;
+    public GameObject smoke;  
     public GameObject releasedObject;
-
 
     private Rigidbody2D hook;
     private GameObject line1;
@@ -42,6 +42,7 @@ public class BallController : MonoBehaviour {
         isUsingSkill = false;
 
         spawnCloundTime = 0.0f;
+
 
         hook = GameObject.Find("Hook").GetComponent<Rigidbody2D>();
         GetComponent<SpringJoint2D>().connectedBody = hook;
@@ -106,11 +107,11 @@ public class BallController : MonoBehaviour {
             UpdateLine();
         }
 
-        if (isFlying && camera.GetComponent<Camera>().orthographicSize <= 6.75f)
+        /*if (isFlying && camera.GetComponent<Camera>().orthographicSize <= 6.75f)
         {
             //Debug.Log(camera.GetComponent<Camera>().orthographicSize);
             camera.GetComponent<Camera>().orthographicSize += 0.02f;       
-        }
+        }*/
 
         if(isFlying)
         {
@@ -133,6 +134,8 @@ public class BallController : MonoBehaviour {
             GetComponent<TrailRenderer>().enabled = true;
             GetComponent<SpringJoint2D>().enabled = false;
 
+            playBeingShotSFX();
+
             isAdjusted = true;
         }
 
@@ -142,13 +145,13 @@ public class BallController : MonoBehaviour {
             movedSet = true;
         }
 
-        if (isFlying && Time.time >= spawnCloundTime && transform.position.x > (hook.transform.position.x + 0.2f))
+        /*if (isFlying && Time.time >= spawnCloundTime && transform.position.x > (hook.transform.position.x + 0.2f))
         {
             spawnCloud();
             spawnCloundTime = Time.time + 0.075f;
-        }
+        }*/
     }
-    
+
     void Update()
     {
 
@@ -253,9 +256,13 @@ public class BallController : MonoBehaviour {
 
     void performSkill()
     {
+        playThrowSFX();
+
         GameObject skillEffectPrefab = (GameObject)Resources.Load("Prefabs/Effects/skill effect", typeof(GameObject));
         Instantiate(skillEffectPrefab, transform.position, skillEffectPrefab.transform.rotation);
-        Instantiate(releasedObject, transform.position, releasedObject.transform.rotation);
+
+        releasedObject.SetActive(true);
+        releasedObject.transform.SetParent(null);
     }
 
     void release()
@@ -273,7 +280,7 @@ public class BallController : MonoBehaviour {
         flyTime = Time.time + releaseTime;
     }
 
-    public IEnumerator Release()
+    /*public IEnumerator Release()
     {
         Vector2 releasePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         float forceX = hook.position.x - releasePos.x;
@@ -300,7 +307,7 @@ public class BallController : MonoBehaviour {
         
         this.enabled = false;
         
-    }
+    }*/
 
     void UpdateLine()
     {
@@ -319,14 +326,37 @@ public class BallController : MonoBehaviour {
         return isPressed;
     }
 
+    public bool getFlying()
+    {
+        return isFlying;
+    }
+
+    public bool getDead()
+    {
+        return isDead;
+    }
+
     void OnCollisionEnter2D(Collision2D otherColl)
     {
         if (!isDead)
-        {
-            if(feather)
-                Instantiate(feather, transform.position, feather.transform.rotation);
-            GameObject smokePrefab = (GameObject)Resources.Load("Prefabs/Effects/smoke", typeof(GameObject));
-            Instantiate(smokePrefab, transform.position, smokePrefab.transform.rotation);
+        {         
+            if (feather)
+            {
+                feather.SetActive(true);
+                feather.transform.SetParent(null);
+                Vector3 temp = feather.transform.rotation.eulerAngles;
+                temp.x = -90.0f;
+                temp.y = 0.0f;
+                temp.z = 0.0f;
+                feather.transform.rotation = Quaternion.Euler(temp);
+                feather.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+            }
+
+            smoke.SetActive(true);
+            smoke.transform.SetParent(null);
+
+            playHitSFX();
+            //smoke.transform.position = transform.position;
         }
         myRB.freezeRotation = false;
         isDead = true;
@@ -340,16 +370,46 @@ public class BallController : MonoBehaviour {
     {
         if(otherColl.tag == "misile" && !isDead)
         {
-            Instantiate(bodyparts, transform.position, bodyparts.transform.rotation);
+            //Instantiate(bodyparts, transform.position, bodyparts.transform.rotation);
+            bodyparts.SetActive(true);
             isDead = true;
             endAttackTime = Time.time + 3.5f;  
+            //Invoke("setCameraMove", 3.5f);
             //Destroy(gameObject);
             GetComponent<SpriteRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
             GetComponent<CircleCollider2D>().enabled = false;
             GetComponent<PolygonCollider2D>().enabled = false;
             GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<TrailRenderer>().enabled = false;
         }
     }
 
+
+    void setCameraMove()
+    {
+        //if (isDead && !movedSet && Time.time >= endAttackTime)
+        {
+            camera.GetComponent<CameraFollow>().setMove();
+            movedSet = true;
+        }
+    }
+
+    void playBeingShotSFX()
+    {
+        GameObject soundManager = GameObject.Find("SoundManager");
+        soundManager.GetComponent<SoundManager>().playBeingShotSound();
+    }
+
+    void playHitSFX()
+    {
+        GameObject soundManager = GameObject.Find("SoundManager");
+        soundManager.GetComponent<SoundManager>().playHitSound();
+    }
+
+    void playThrowSFX()
+    {
+        GameObject soundManager = GameObject.Find("SoundManager");
+        soundManager.GetComponent<SoundManager>().playThrowSound();
+    }
 
 }

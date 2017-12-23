@@ -9,8 +9,13 @@ public class SelfDestruction : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
-        Destroy(gameObject, aliveTime);
+        Invoke("HideGameObject", aliveTime);
 	}
+
+    void HideGameObject()
+    {
+        gameObject.SetActive(false);
+    }
 	
 	
 }
